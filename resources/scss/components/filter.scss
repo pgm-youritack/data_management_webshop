@@ -1,0 +1,10 @@
+.filter{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 18.75rem;
+    .filter__head{
+        width: 100%;
+        align-items: center;
+    }
+}

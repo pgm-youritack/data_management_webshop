@@ -1,0 +1,16 @@
+.detail__info-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+    .item__image{
+
+        width: 17rem;
+        height: 26rem;
+        
+    }
+    .detail__info-main-description{
+        display: flex;
+        flex-direction: column;
+    }
+}

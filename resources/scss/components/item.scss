@@ -1,0 +1,31 @@
+.item{
+    list-style: none;
+    a{
+        text-decoration: none;
+        color: black;
+    width: 25rem;
+    height: 15.1875rem;
+    display: flex;
+    gap: 1rem;
+    .item__image{
+       width: 11.25rem;
+       height: 15.1875rem; 
+       border: 1px solid gray ;
+    }
+    .item__info{
+        padding: 0rem;
+        margin: 0rem;
+        .item__title{
+            margin: 0rem;
+            padding: 0rem;
+            font-size: 25px;
+        }
+    }
+
+}
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

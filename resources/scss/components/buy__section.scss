@@ -1,0 +1,16 @@
+.buy__section{
+    width: 14.5rem;
+    height: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    .buy__section-stock{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .buy__section-buying{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+}
