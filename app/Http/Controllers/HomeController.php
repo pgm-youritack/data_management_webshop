@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -11,10 +13,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +21,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-      
+      $randomManga = Product::inRandomOrder()->limit(3)->where('type_id', 1)->get();
+      $randomLightnovel = Product::inRandomOrder()->limit(3)->where('type_id', 2)->get();
+      return view('home', [
+        'randomManga'=>$randomManga,
+        'randomLightnovel'=>$randomLightnovel
+    ]); 
     }
 }

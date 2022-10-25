@@ -1,6 +1,9 @@
 @extends('layouts.dashboard')
 @section('title', 'new product')
 @section('content')
+    @if ($errors->any())
+        {!! implode('', $errors->all('<div>:message</div>')) !!}
+    @endif
 
     <form class="updateProductForm" method="POST" enctype="multipart/form-data">
         @csrf
@@ -65,19 +68,26 @@
             </select>
         </div>
         <div class="updateProductForm__input">
-            <label class="updateProductForm__input-label" for="price">Categories:</label>
-            <div class="checkboxes">
-                @foreach ($Categories as $categorie)
-                    <label><input type="checkbox" name="categories[]" value="{{ $categorie->id }}">
-                        {{ $categorie->categorie}}
-                    </label>
-                @endforeach
+            <div class="checkbox">
+                <label for="">
+                    in Stock:
+                    <input type="text" name="stock" id="" value="">
+                </label>
             </div>
+            <div class="updateProductForm__input">
+                <label class="updateProductForm__input-label" for="price">Categories:</label>
+                <div class="checkboxes">
+                    @foreach ($Categories as $categorie)
+                        <label><input type="checkbox" name="categories[]" value="{{ $categorie->id }}">
+                            {{ $categorie->categorie }}
+                        </label>
+                    @endforeach
+                </div>
                 <div class="updateProductForm__input">
                     <label class="updateProductForm__input-label" for="image">Product image:</label>
                     <input type="file" name="image" id="image">
                 </div>
-                <input type="submit" value="gsg">
+                <input type="submit" value="add product">
     </form>
 
 @endsection

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('product_description');
             $table->decimal('price',$precision=4,$scale=2);
             $table->integer('pages');
-            $table->boolean('stock');
+            $table->integer('stock');
             $table->string('image',150);
             $table->timestamps();
         });

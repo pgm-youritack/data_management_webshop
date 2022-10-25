@@ -19,7 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get("/products/",[ApiController::class,'getProducts']);
+Route::get("/products/{q}",[ApiController::class,'getSpecificproducts']);
+
 Route::get("/manga/",[ApiController::class,'getManga']);
-Route::get("/manga/{q}",[ApiController::class,'getManga']);
+Route::get("/manga/{q}",[ApiController::class,'getSpecificManga']);
+
 Route::get("/lightnovel/",[ApiController::class,'getLightnovel']);
-Route::get("/lightnovel/{q}",[ApiController::class,'getLightnovel']);
+Route::get("/lightnovel/{q}",[ApiController::class,'getSpecificLightnovel']);

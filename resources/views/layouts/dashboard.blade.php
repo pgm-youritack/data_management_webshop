@@ -14,7 +14,7 @@
         </header>
         @show
 
-        <div class="container">
+        <div class="dashboard__content">
             @yield('content')
         </div>
     </body>

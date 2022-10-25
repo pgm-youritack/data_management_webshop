@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'country' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'isadmin'=>['int'],
         ]);
     }
 
@@ -76,6 +77,7 @@ class RegisterController extends Controller
             'postcode' => $data['postcode'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'isadmin'=>$data['isadmin']
         ]);
     }
 }

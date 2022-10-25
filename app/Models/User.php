@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -25,6 +26,7 @@ class User extends Authenticatable
         'postcode',
         'country',
         'password',
+        'isadmin'
     ];
 
     /**
@@ -45,4 +47,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+}
+class NewAdmin extends Model{
+    protected $table='users';
+    protected $id='';
+}
+class Users extends Model{
+
+    protected $table='users';
+    protected $id='';
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

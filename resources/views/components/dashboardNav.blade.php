@@ -2,20 +2,20 @@
         <li class="{{Request::is('dashboard/products')?'dashboardactive':'';}} dashboardNavigation__item">
             <a href="{{url('/dashboard/products')}}">all products</a>
         </li>
-        <li class="{{Request::is('/dashboard/newProduct')?'dashboardactive':'';}} dashboardNavigation__item">
+        <li class="{{Request::is('dashboard/addProduct')?'dashboardactive':'';}} dashboardNavigation__item">
             <a href="{{url('/dashboard/addProduct')}}">add new product</a>
         </li>
-        <li class="{{Request::is('/dashboard/addProductTag')?'dashboardactive':'';}} dashboardNavigation__item">
+        <li class="{{Request::is('dashboard/addProductTag')?'dashboardactive':'';}} dashboardNavigation__item">
             <a href="{{url('/dashboard/addProductTag')}}">add new tag</a>
         </li>
+
+        <li class="{{Request::is('/dashboard/addAdmin')?'dashboardactive':'';}} dashboardNavigation__item">
+            <a href="{{url('/dashboard/addAdmin')}}">add admin</a>
+        </li>
+
         <li class="{{Request::is('/dashboard/users')?'dashboardactive':'';}} dashboardNavigation__item">
             <a href="{{url('')}}">all users</a>
         </li>
-
-
-
-
-
 
 
          <li class="dashboardNavigation__item ">
